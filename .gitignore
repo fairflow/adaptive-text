@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+adaptive_text_purchases.db
+text_transform_cache.db
+
+# Environment variables
+.env
+*.env
+
+# API Keys (important!)
+*_api_key.txt
+secrets.toml
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test outputs
+test_output/
+downloads/
