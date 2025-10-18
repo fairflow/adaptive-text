@@ -1,0 +1,274 @@
+
+# Create ASCII/text-based mockup diagrams for the UI
+
+mockup_design = '''
+# UI MOCKUP SPECIFICATIONS
+# Adaptive Text Resolution Viewer Interface
+
+## LAYOUT 1: Desktop View (Wide Screen)
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  🔍 ADAPTIVE TEXT RESOLUTION VIEWER                          💰 100.0 cr   ║
+║  Experience variable-detail content with fine-grained control               ║
+╠═══════════════════════════╦════════════════════════════════════════════════╣
+║ CONTENT CONTROLS          ║  The Future of Adaptive Text Systems           ║
+║                           ║                                                 ║
+║ 📊 Resolution Level       ║  ┌─────┬─────┬─────┬─────┐                     ║
+║ ●━━━━○━━━━━━━━━━          ║  │ Lvl0│ Lvl1│ Lvl2│ Lvl3│                     ║
+║ 0   1   2   3             ║  │Sum. │Cond.│Std. │Exp. │                     ║
+║ Currently: 1 (Condensed)  ║  └─────┴─────┴─────┴─────┘                     ║
+║                           ║                                                 ║
+║ 🎩 Formality              ║ ╔═══════════════════════════════════════════╗  ║
+║ ━━━━━●━━━━━               ║ ║ Section 1                      🔒 0.50 cr ║  ║
+║ 1    5    10              ║ ╚═══════════════════════════════════════════╝  ║
+║ Currently: 5 (Neutral)    ║  Adaptive text systems represent a paradigm    ║
+║                           ║  shift in how digital content is consumed...   ║
+║ 📚 Reading Age            ║  [Preview - unlock for full content]           ║
+║ ━━━━━━●━━━                ║  ┌──────────────────────────────────────────┐ ║
+║ 8   14   18               ║  │  [Unlock for 0.50 credits]   📥 Download │ ║
+║ Currently: 14 (HS)        ║  └──────────────────────────────────────────┘ ║
+║                           ║                                                 ║
+║ ─────────────────────     ║ ╔═══════════════════════════════════════════╗  ║
+║ 💰 Mock Wallet            ║ ║ Section 2                      ✓ OWNED    ║  ║
+║                           ║ ╚═══════════════════════════════════════════╝  ║
+║ Balance: 100.0 credits    ║  The technical implementation relies on        ║
+║ Blocks purchased: 0       ║  controllable text generation, where           ║
+║                           ║  attributes like formality and reading level   ║
+║ [Reset Wallet]            ║  are explicitly targeted during transformation.║
+║                           ║  ┌──────────────────────────────────────────┐ ║
+║                           ║  │  📥 Download Section 2                   │ ║
+║                           ║  └──────────────────────────────────────────┘ ║
+╚═══════════════════════════╩════════════════════════════════════════════════╝
+
+
+## LAYOUT 2: Mobile View (Narrow Screen)
+
+╔═══════════════════════════════════╗
+║ 🔍 Adaptive Text Viewer           ║
+║                                   ║
+║ ┌───────────────────────────────┐ ║
+║ │ 📊 Resolution: 1              │ ║
+║ │ ●━━━━○━━━━━━━━━━              │ ║
+║ │                               │ ║
+║ │ 🎩 Formality: 5               │ ║
+║ │ ━━━━━●━━━━━                   │ ║
+║ │                               │ ║
+║ │ 📚 Reading Age: 14            │ ║
+║ │ ━━━━━━●━━━                    │ ║
+║ │                               │ ║
+║ │ 💰 Balance: 100.0 cr          │ ║
+║ └───────────────────────────────┘ ║
+║                                   ║
+║ ╔═══════════════════════════════╗ ║
+║ ║ Section 1      🔒 0.50 cr    ║ ║
+║ ╚═══════════════════════════════╝ ║
+║ Adaptive text systems represent   ║
+║ a paradigm shift...               ║
+║ [Preview - unlock full content]   ║
+║                                   ║
+║ ┌───────────────────────────────┐ ║
+║ │  Unlock for 0.50 credits      │ ║
+║ └───────────────────────────────┘ ║
+║                                   ║
+║ ╔═══════════════════════════════╗ ║
+║ ║ Section 2      ✓ OWNED       ║ ║
+║ ╚═══════════════════════════════╝ ║
+║ The technical implementation...   ║
+║                                   ║
+║ ┌───────────────────────────────┐ ║
+║ │  📥 Download Section 2        │ ║
+║ └───────────────────────────────┘ ║
+╚═══════════════════════════════════╝
+
+
+## COMPONENT DETAILS
+
+### Slider Component Specifications
+
+┌─────────────────────────────────────────┐
+│ 📊 Resolution Level                     │
+│                                         │
+│  Summary    Condensed   Std    Expanded │
+│     ●━━━━━━━━○━━━━━━━━━━○━━━━━━○       │
+│     0        1          2       3       │
+│                                         │
+│  Currently: Level 1 (Condensed)         │
+│  Cost modifier: +0.5 credits            │
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│ 🎩 Formality                            │
+│                                         │
+│  Casual                    Formal       │
+│  ━━━━━━━━━●━━━━━━━━━━━━━━━━━━          │
+│  1    3    5    7    9    10            │
+│                                         │
+│  Currently: 5 (Neutral Professional)    │
+│  Cost modifier: +0.0 credits            │
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│ 📚 Reading Age                          │
+│                                         │
+│  Elementary    Middle    High    College│
+│  ━━━━━●━━━━━━━━○━━━━━━━━○━━━━━━         │
+│  8    10   12   14   16   18            │
+│                                         │
+│  Currently: 14 (High School)            │
+│  Flesch-Kincaid Grade: 9-10             │
+└─────────────────────────────────────────┘
+
+
+### Content Block Component
+
+┌─────────────────────────────────────────────────────────┐
+│ ╔═════════════════════════════════════════════════════╗ │
+│ ║ Section 3: Future Developments    💰 2.00 credits  ║ │
+│ ╚═════════════════════════════════════════════════════╝ │
+│                                                         │
+│ LOCKED PREVIEW (Level 0 - Always Free):                │
+│ ┌─────────────────────────────────────────────────────┐ │
+│ │ Future developments may include multi-modal         │ │
+│ │ extensions and semantic interpolation...            │ │
+│ └─────────────────────────────────────────────────────┘ │
+│                                                         │
+│ ⬇ Unlock higher detail levels ⬇                       │
+│                                                         │
+│ ┌──────────────────────────────┐  ┌──────────────────┐ │
+│ │                              │  │                  │ │
+│ │  🔓 Unlock at Current Level  │  │  💾 Buy All 4    │ │
+│ │                              │  │     Levels       │ │
+│ │     💰 2.00 credits          │  │  💰 4.50 credits │ │
+│ │                              │  │  (Save 10%)      │ │
+│ └──────────────────────────────┘  └──────────────────┘ │
+│                                                         │
+│ ℹ️  You'll be able to:                                 │
+│   • View full content at Level 3 (Expanded)            │
+│   • Download as .txt file                              │
+│   • Access forever across sessions                     │
+│   • Adjust formality/reading age anytime               │
+└─────────────────────────────────────────────────────────┘
+
+
+### Owned Content Block
+
+┌─────────────────────────────────────────────────────────┐
+│ ╔═════════════════════════════════════════════════════╗ │
+│ ║ Section 1: Introduction          ✅ OWNED          ║ │
+│ ╚═════════════════════════════════════════════════════╝ │
+│                                                         │
+│ Adaptive text systems represent a paradigm shift in    │
+│ digital content consumption. These systems dynamically │
+│ adjust detail, formality, and complexity based on user │
+│ preferences and available screen space...              │
+│                                                         │
+│ [Full content displayed at current settings]           │
+│ Resolution: Level 1 | Formality: 5 | Age: 14          │
+│                                                         │
+│ ┌───────────────────┐  ┌──────────────┐  ┌──────────┐ │
+│ │ 📥 Download .txt  │  │ 📋 Copy Text │  │ 🔗 Share │ │
+│ └───────────────────┘  └──────────────┘  └──────────┘ │
+│                                                         │
+│ Purchased: Oct 16, 2025 at Level 1 for 0.50 credits   │
+└─────────────────────────────────────────────────────────┘
+
+
+### Wallet & Purchase History
+
+┌─────────────────────────────────────────┐
+│ 💰 MOCK WALLET                          │
+│                                         │
+│ Current Balance: 95.50 credits          │
+│ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    │
+│                                         │
+│ 📊 Usage Statistics:                    │
+│   • Blocks purchased: 4                 │
+│   • Total spent: 4.50 credits           │
+│   • Articles accessed: 1                │
+│                                         │
+│ 📜 Recent Purchases:                    │
+│ ┌─────────────────────────────────────┐ │
+│ │ Section 1 (Lvl 1)    -0.50 cr      │ │
+│ │ Section 2 (Lvl 2)    -1.00 cr      │ │
+│ │ Section 3 (Lvl 3)    -2.00 cr      │ │
+│ │ Section 4 (Lvl 2)    -1.00 cr      │ │
+│ └─────────────────────────────────────┘ │
+│                                         │
+│ ┌─────────────────────────────────────┐ │
+│ │     [Reset Wallet & Purchases]      │ │
+│ └─────────────────────────────────────┘ │
+└─────────────────────────────────────────┘
+
+
+## COLOR SCHEME (for implementation)
+
+Primary Colors:
+  - Background: #FFFFFF (white)
+  - Panel BG: #F8F9FA (light gray)
+  - Text: #212529 (dark gray)
+  - Accent: #0066CC (blue)
+
+Status Indicators:
+  - Free: #28A745 (green)
+  - Locked: #FFC107 (amber)
+  - Owned: #28A745 (green)
+  - Error: #DC3545 (red)
+
+Interactive Elements:
+  - Slider track: #DEE2E6 (gray)
+  - Slider thumb: #0066CC (blue)
+  - Button primary: #0066CC (blue)
+  - Button hover: #0052A3 (darker blue)
+
+
+## INTERACTION STATES
+
+Slider Interaction:
+  1. Hover: Show tooltip with exact value
+  2. Drag: Update preview in real-time (debounced)
+  3. Release: Trigger content update
+  4. Touch: Larger touch targets (48px min)
+
+Block Unlock Flow:
+  1. Initial: Show locked preview + unlock button
+  2. Click unlock: Show confirmation modal
+  3. Confirm: Deduct credits → unlock content
+  4. Success: Animate unlock, show download button
+  5. Insufficient funds: Show error + add credits prompt
+
+Content Download:
+  1. Click download: Generate .txt file
+  2. Filename format: "section_{id}_res{level}_{date}.txt"
+  3. Include metadata header in file
+
+
+## RESPONSIVE BREAKPOINTS
+
+Desktop (>1024px):
+  - Sidebar + main content (2-column)
+  - Large sliders with labels
+  - Multiple blocks visible
+
+Tablet (768-1024px):
+  - Collapsible sidebar
+  - Medium sliders
+  - 2 blocks visible
+
+Mobile (<768px):
+  - Stacked layout
+  - Compact sliders at top
+  - 1 block at a time
+  - Sticky controls header
+'''
+
+with open('UI_MOCKUPS.txt', 'w') as f:
+    f.write(mockup_design)
+
+print("✓ Created: UI_MOCKUPS.txt")
+print("\nMockup includes:")
+print("  - Desktop & mobile layouts")
+print("  - Component specifications")
+print("  - Color scheme")
+print("  - Interaction states")
+print("  - Responsive breakpoints")
+print("\nAll ASCII-art mockups for clear visualization!")

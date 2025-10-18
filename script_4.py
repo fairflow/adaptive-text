@@ -1,0 +1,241 @@
+
+# Create a quick reference card
+
+quick_ref = '''
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    ADAPTIVE TEXT SYSTEM - QUICK REFERENCE                  ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ FILES CREATED                                                              │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ 📄 adaptive_text_demo.py          - Streamlit demo (no API required)      │
+│ 📄 adaptive_text_integration.py   - Production LLM integration            │
+│ 📄 requirements.txt                - Python dependencies                   │
+│ 📄 README.md                       - Project documentation                 │
+│ 📄 development-guide.md            - Step-by-step implementation guide    │
+│ 📄 UI_MOCKUPS.txt                  - Interface mockups & specifications   │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ QUICK START                                                                │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ 1. Install dependencies:                                                   │
+│    $ pip install streamlit openai                                          │
+│                                                                            │
+│ 2. Run the demo (no API key needed):                                       │
+│    $ streamlit run adaptive_text_demo.py                                   │
+│                                                                            │
+│ 3. For production with real LLM:                                           │
+│    $ export OPENAI_API_KEY="sk-..."                                        │
+│    $ python adaptive_text_integration.py                                   │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ CONTROL PARAMETERS                                                         │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ 📊 RESOLUTION (0-3)                                                        │
+│    0 = Summary (20-30% of original)                                        │
+│    1 = Condensed (50% of original)                                         │
+│    2 = Standard (full content preserved)                                   │
+│    3 = Expanded (with additional context)                                  │
+│                                                                            │
+│ 🎩 FORMALITY (1-10)                                                        │
+│    1-3   = Very casual, conversational                                     │
+│    4-6   = Neutral professional                                            │
+│    7-10  = Formal academic                                                 │
+│                                                                            │
+│ 📚 READING AGE (8-18)                                                      │
+│    8-10  = Elementary (Grade 3-5)                                          │
+│    11-13 = Middle school (Grade 6-8)                                       │
+│    14-16 = High school (Grade 9-10)                                        │
+│    17-18 = College level (Grade 11+)                                       │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ KEY FEATURES                                                               │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ ✓ Fine-grained text control via sliders                                    │
+│ ✓ Mock micropayment system with virtual wallet                            │
+│ ✓ SQLite persistence (purchased content saved)                            │
+│ ✓ LLM integration (OpenAI/Anthropic)                                       │
+│ ✓ Intelligent caching (reduces API costs)                                  │
+│ ✓ Download unlocked content as .txt                                        │
+│ ✓ Block-level pricing and unlocking                                        │
+│ ✓ Session persistence across refreshes                                     │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ CODE USAGE EXAMPLES                                                        │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ Transform single text block:                                               │
+│ ───────────────────────────────────────────────────────────────────────    │
+│ from adaptive_text_integration import AdaptiveTextProcessor                │
+│                                                                            │
+│ processor = AdaptiveTextProcessor(api_key="sk-...")                        │
+│                                                                            │
+│ result = processor.transform_text(                                         │
+│     text="Your content here...",                                           │
+│     resolution=2,    # Standard detail                                     │
+│     formality=7,     # Formal tone                                         │
+│     reading_age=16   # High school level                                   │
+│ )                                                                          │
+│                                                                            │
+│ print(result["text"])                                                      │
+│ print(f"Tokens: {result['tokens_used']}")                                  │
+│                                                                            │
+│ ───────────────────────────────────────────────────────────────────────    │
+│                                                                            │
+│ Batch process multiple blocks:                                             │
+│ ───────────────────────────────────────────────────────────────────────    │
+│ blocks = [                                                                 │
+│     {"id": "intro", "content": "Introduction..."},                         │
+│     {"id": "body", "content": "Main content..."}                           │
+│ ]                                                                          │
+│                                                                            │
+│ results = processor.batch_transform(                                       │
+│     blocks=blocks,                                                         │
+│     resolution=1,                                                          │
+│     formality=5,                                                           │
+│     reading_age=14                                                         │
+│ )                                                                          │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ COST ESTIMATES (OpenAI GPT-4o-mini)                                        │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ Per 1000 blocks transformed:                                               │
+│   - Summary (Lvl 0):    ~$0.50 - $1.00                                     │
+│   - Condensed (Lvl 1):  ~$0.80 - $1.50                                     │
+│   - Standard (Lvl 2):   ~$1.20 - $2.00                                     │
+│   - Expanded (Lvl 3):   ~$1.80 - $3.00                                     │
+│                                                                            │
+│ With 70% cache hit rate:                                                   │
+│   Effective cost: ~30% of above                                            │
+│                                                                            │
+│ Pre-generation strategy:                                                   │
+│   Generate 12 popular configs per block upfront = ~$0.02/block             │
+│   Then serve from cache = $0/request                                       │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ ARCHITECTURE OVERVIEW                                                      │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│   ┌─────────────┐                                                          │
+│   │   User UI   │  (Streamlit web interface)                               │
+│   │   Sliders   │                                                          │
+│   └──────┬──────┘                                                          │
+│          │                                                                 │
+│          ▼                                                                 │
+│   ┌─────────────┐       ┌──────────────┐                                  │
+│   │  Purchase   │◄─────►│    Wallet    │                                  │
+│   │   Manager   │       │   (SQLite)   │                                  │
+│   └──────┬──────┘       └──────────────┘                                  │
+│          │                                                                 │
+│          ▼                                                                 │
+│   ┌─────────────┐       ┌──────────────┐                                  │
+│   │    Text     │◄─────►│    Cache     │                                  │
+│   │ Transformer │       │   (SQLite)   │                                  │
+│   └──────┬──────┘       └──────────────┘                                  │
+│          │                                                                 │
+│          ▼                                                                 │
+│   ┌─────────────┐                                                          │
+│   │  LLM API    │  (OpenAI / Anthropic)                                    │
+│   │ (GPT-4 etc) │                                                          │
+│   └─────────────┘                                                          │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ DATABASE SCHEMA                                                            │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ purchases                                                                  │
+│ ├─ user_id (TEXT)                                                          │
+│ ├─ block_id (TEXT)                                                         │
+│ ├─ resolution_level (INT)                                                  │
+│ ├─ purchase_date (TEXT)                                                    │
+│ └─ cost (REAL)                                                             │
+│                                                                            │
+│ content_cache                                                              │
+│ ├─ text_hash (TEXT)                                                        │
+│ ├─ resolution (INT)                                                        │
+│ ├─ formality (INT)                                                         │
+│ ├─ reading_age (INT)                                                       │
+│ ├─ transformed_text (TEXT)                                                 │
+│ └─ tokens_used (INT)                                                       │
+│                                                                            │
+│ wallets                                                                    │
+│ ├─ user_id (TEXT)                                                          │
+│ ├─ balance (REAL)                                                          │
+│ └─ last_updated (TEXT)                                                     │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ TROUBLESHOOTING                                                            │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ Problem: "No module named 'streamlit'"                                     │
+│ Fix: pip install -r requirements.txt                                       │
+│                                                                            │
+│ Problem: "API key not found"                                               │
+│ Fix: export OPENAI_API_KEY="sk-your-key-here"                             │
+│                                                                            │
+│ Problem: "Database is locked"                                              │
+│ Fix: Use check_same_thread=False in sqlite3.connect()                     │
+│                                                                            │
+│ Problem: Slow transformations                                              │
+│ Fix: Check cache hit rate, pre-warm cache for common configs              │
+│                                                                            │
+│ Problem: High API costs                                                    │
+│ Fix: Use cheaper model (gpt-3.5-turbo) for summaries                      │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ NEXT STEPS                                                                 │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│ 1. ☐ Run demo to understand the concept                                   │
+│ 2. ☐ Review UI mockups and architecture                                   │
+│ 3. ☐ Set up development environment                                        │
+│ 4. ☐ Get OpenAI API key                                                    │
+│ 5. ☐ Test integration with sample texts                                    │
+│ 6. ☐ Customize for your content type                                       │
+│ 7. ☐ Deploy to Streamlit Cloud or Docker                                   │
+│ 8. ☐ Add authentication and real payments                                  │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                              RESOURCES                                     ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                            ║
+║ • OpenAI API Docs: https://platform.openai.com/docs                        ║
+║ • Streamlit Docs: https://docs.streamlit.io                                ║
+║ • Anthropic Claude: https://docs.anthropic.com                             ║
+║ • Text Style Transfer Survey: https://arxiv.org/abs/2407.14822            ║
+║ • GYAFC Formality Dataset: https://arxiv.org/abs/1803.06535               ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+'''
+
+with open('QUICK_REFERENCE.txt', 'w') as f:
+    f.write(quick_ref)
+
+print(quick_ref)
+print("\n✓ Created: QUICK_REFERENCE.txt")
