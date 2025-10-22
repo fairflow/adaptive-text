@@ -290,7 +290,7 @@ def main():
         def llm_transform(text, resolution, formality, reading_age):
             client = openai.OpenAI(api_key="YOUR_API_KEY")
 
-            prompt = f"""
+            prompt = f'''
             Transform this text with the following parameters:
             - Resolution: {resolution} (0=summary, 3=expanded)
             - Formality: {formality}/10
@@ -300,7 +300,7 @@ def main():
             {text}
 
             Provide only the transformed text.
-            """
+            '''
 
             response = client.chat.completions.create(
                 model="gpt-4",
