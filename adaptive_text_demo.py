@@ -18,11 +18,6 @@ if 'wallet_balance' not in st.session_state:
 if 'purchased_blocks' not in st.session_state:
     st.session_state.purchased_blocks = set()
 
-if 'db_initialized' not in st.session_state:
-    init_database()
-    st.session_state.db_initialized = True
-
-
 # Database setup for persistence
 def init_database():
     """Initialize SQLite database for storing purchased content"""
@@ -57,11 +52,16 @@ def init_database():
 
 
 def mock_llm_transform(text: str, resolution: int, formality: int, reading_age: int) -> str:
-    """
-    Mock LLM transformation - in production, this would call OpenAI/Anthropic API
-    For demo purposes, we simulate different versions based on parameters
-    """
+    conn.commit()
+    conn.close()
 
+
+if 'db_initialized' not in st.session_state:
+    init_database()
+    st.session_state.db_initialized = True
+
+
+def mock_llm_transform(text: str, resolution: int, formality: int, reading_age: int) -> str:
     # Base text versions (simulating LLM output at different resolutions)
     transformations = {
         0: lambda t: " ".join(t.split()[:max(5, len(t.split()) // 4)]) + "...",  # Summary
@@ -315,8 +315,7 @@ def main():
         - `content_cache`: Stores pre-generated transformations
 
         ### Cost Optimization
-        - Pre-generate common transformations
-        - Cache LLM outputs in database
+        - Pre-generate common transformations        - Cache LLM outputs in database
         - Batch process articles on upload
         """)
 
