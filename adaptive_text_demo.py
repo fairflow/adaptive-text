@@ -51,11 +51,6 @@ def init_database():
     conn.close()
 
 
-def mock_llm_transform(text: str, resolution: int, formality: int, reading_age: int) -> str:
-    conn.commit()
-    conn.close()
-
-
 if 'db_initialized' not in st.session_state:
     init_database()
     st.session_state.db_initialized = True
